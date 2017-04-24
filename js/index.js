@@ -5,7 +5,6 @@ $(document).ready(function() {
 
     $contents.hide();
 
-    //gestion du refresh & recup du hash
     let getHash = window.location.hash;
     if (getHash) {
         if (getHash != '#home' && getHash != '#page1' && getHash != '#page2' && getHash != '#page3') {
@@ -17,13 +16,11 @@ $(document).ready(function() {
         $('#content-' + link).show();
         $liNav.removeClass('active');
         $('#nav-' + navLink).addClass('active');
-        console.log('#nav-' + navLink + ' li');
     } else {
         $contents.hide();
         $('#home').show();
     }
 
-    //navigation + content auto + ajout d'un hash à l'url
     $liNav.click(function (event) {
         const showThis = $(this).attr('id');
         const getId = showThis.toLowerCase().replace('nav-', '');
